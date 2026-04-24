@@ -1,16 +1,48 @@
-# notes_app
+# Notes App (v1.0.0)
 
-A new Flutter project.A Flutter-based notes app with Firebase Auth, Firestore, Riverpod state management, and GoRouter navigation
+A modern and simple Notes application built with **Flutter** and **Firebase**.  
+Users can easily create, view, and manage notes with a clean UI and real-time updates.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Create and save notes
+- View notes in real-time
+- Delete notes
+- Input validation (required fields)
+- Beautiful gradient UI design
+- Snackbar feedback system
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack
+
+- Flutter (Dart)
+- Firebase Authentication
+- Cloud Firestore
+
+---
+
+## UI Preview
+
+> Add screenshots here (optional but recommended)
+
+---
+
+##  APK Download
+
+👉 Download the latest APK from GitHub Releases:  https://github.com/shagormahamud93/releases/raw/refs/heads/main/app-release.apk
+Go to the **Releases section** and download the latest version.
+
+Make sure "Install from unknown sources" is enabled on your Android device.
+
+---
+
+## Getting Started (For Developers)
+
+```bash
+git clone https://github.com/shagormahamud93/notes_app.git
+cd notes-app
+flutter pub get
+flutter run
