@@ -61,10 +61,6 @@ class _SplashPageState extends State<SplashPage> {
                 style: TextStyle(fontSize: 14, color: AppColors.white70),
               ),
               const SizedBox(height: 30),
-              const Text(
-                "Organize your thoughts easily",
-                style: TextStyle(fontSize: 14, color: AppColors.white70),
-              ),
               // Loading indicator
               const CircularProgressIndicator(
                 color: AppColors.white,

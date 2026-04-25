@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notes_app/core/utils/app_snackbar.dart';
 import 'package:notes_app/features/auth/data/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -35,8 +36,22 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
-                await auth.login(email.text, pass.text);
-                context.go('/home');
+                try {
+                  await auth.login(email.text, pass.text);
+                  if (!context.mounted) return;
+                  AppSnackBar.show(
+                    context,
+                    message: "Welcome back! Login successful",
+                  );
+                  await Future.delayed(const Duration(milliseconds: 500));
+                  context.go('/home');
+                } catch (e) {
+                  AppSnackBar.show(
+                    context,
+                    message: "Login failed. Please check your credentials.",
+                    isError: true,
+                  );
+                }
               },
               child: const Text("Login"),
             ),

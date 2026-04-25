@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notes_app/core/utils/app_snackbar.dart';
 import 'package:notes_app/features/auth/data/auth_service.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -37,9 +38,19 @@ class _RegisterPageState extends State<RegisterPage> {
               onPressed: () async {
                 try {
                   await auth.register(email.text, pass.text);
+                  if (!context.mounted) return;
+                  AppSnackBar.show(
+                    context,
+                    message: "Account created successfully!",
+                  );
+                  await Future.delayed(const Duration(milliseconds: 500));
                   context.go('/home');
                 } catch (e) {
-                  print("Auth Error: $e");
+                  AppSnackBar.show(
+                    context,
+                    message: "Registration failed. Try again.",
+                    isError: true,
+                  );
                 }
               },
               child: const Text("Register"),
